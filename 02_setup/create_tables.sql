@@ -1,5 +1,5 @@
 
--- Create schema & tables adapted to the Munich dataset CSVs
+Create schema & tables adapted to the Munich dataset CSVs
 -- Date: 2025-11-05
 -- Author: Rafik Bouakaz 
 
@@ -19,7 +19,6 @@ CREATE TABLE radzaehlstellen (
   richtung_2 TEXT,
   besonderheiten TEXT
 );
-
 
 -- Daily aggregated data: rad_tage CSV:
 -- datum,uhrzeit_start,uhrzeit_ende,zaehlstelle,richtung_1,richtung_2,gesamt,min-temp,max-temp,niederschlag,bewoelkung,sonnenstunden
@@ -53,3 +52,6 @@ CREATE TABLE rad_15min (
   CONSTRAINT fk_15min_station FOREIGN KEY (zaehlstelle) REFERENCES radzaehlstellen(zaehlstelle)
 );
 
+-- quick test 
+select * from rad_15min
+limit 10;
